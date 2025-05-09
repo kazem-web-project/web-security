@@ -1,16 +1,11 @@
-How to import database:
-
-1- Navigate into your mysql bin folder (C:\xampp\mysql\bin)
-2- Enter the command below: 
-mysql -u root -p < <pathtothefile>\schema.sql
-3- Enter your password
+This is the dockerized version of the project. 
+Just use:
+# docker-compose up --build
 
 Warning: the import script will drop and define a new database user 'hotel'@'localhost' and it will drop and create database 'Hotel'
 
-
-You can change your password anytime!
-
 Admin users:
+
     username: administrator
     password: admin 
 
