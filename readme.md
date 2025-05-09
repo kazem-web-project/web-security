@@ -1,6 +1,7 @@
 This is the dockerized version of the project. 
 Just use:
-# docker-compose up --build
+
+docker-compose up --build
 
 Warning: the import script will drop and define a new database user 'hotel'@'localhost' and it will drop and create database 'Hotel'
 
