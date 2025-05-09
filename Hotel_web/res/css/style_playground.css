@@ -1,0 +1,166 @@
+body {
+  background-color: #D9AB73;
+}
+
+.my-container {
+  position: relative;
+  color: #2652BC;
+}
+
+.form-control {
+  background-color: #F2D399 !important;
+  margin-bottom: 0.5rem;
+}
+
+.my-element {
+  margin-bottom: 5px;
+}
+
+.my-button-sizes {
+  padding: 0% !important;
+}
+
+.my-box {
+  position: absolute;
+}
+
+.my-overlay {
+  z-index: -999;
+}
+
+#my-login-box {
+  margin: auto !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 300px;
+  /* Need a specific value to work */
+
+}
+
+.my_button {
+  background-color: #3C92A6 !important;
+}
+
+.guest_button {
+  background-color: #A67665 !important;
+}
+
+@media (min-width: 50px) and (max-width: 376px) {
+  body {
+    background-color: #F2D399;
+  }
+
+  .logo {
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 2px;
+  }
+
+  .my-form {
+    margin-top: 170px;
+  }
+
+  #carouselExampleDark {
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 458px) {
+  body {
+    background-color: #F2D399;
+  }
+
+  .logo {
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 2px;
+  }
+
+  .my-form {
+    margin-top: 140px;
+  }
+
+  #carouselExampleDark {
+    margin-top: 30px;
+  }
+}
+
+
+
+@media (min-width: 458px) and (max-width: 619px) {
+  body {
+    background-color: #F2D399;
+  }
+
+  .logo {
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 2px;
+  }
+
+  .my-form {
+    margin-top: 300px;
+  }
+
+  #carouselExampleDark {
+    margin-top: 30px;
+  }
+}
+
+
+
+
+@media (min-width: 619px) and (max-width: 738px) {
+  body {
+    background-color: #F2D399;
+  }
+
+  .logo {
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 1px;
+  }
+
+  .my-form {
+    margin-top: 5px;
+    background-color: transparent !important;
+  }
+
+  .my-label {
+    background-color: #D9AB73;
+  }
+
+  #carouselExampleDark {
+    margin-top: 30px;
+  }
+}
+
+
+@media (min-width: 738px) and (max-width: 966px) {
+  .my-label {
+    background-color: #D9AB73;
+  }
+
+  body {
+    background-color: #F2D399;
+  }
+
+  .logo {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 1px;
+  }
+
+  .my-form {
+    margin-top: 5px;
+    background-color: transparent !important;
+  }
+
+  #carouselExampleDark {
+    margin-top: 30px;
+  }
+}

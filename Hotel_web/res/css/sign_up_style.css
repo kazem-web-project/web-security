@@ -1,0 +1,38 @@
+/* for the sign up page - 100% finished  */
+
+.bg {
+    background: url('/res/img/background.jpg') no-repeat;
+
+    background-size: auto;
+}
+
+.form-container {
+    border: 0px solid #fff;
+    padding: 50px 20px;
+    margin-top: 5vh;
+
+    -webkit-box-shadow: -2px 18px 22px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -2px 18px 22px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: -2px 18px 22px 0px rgba(0, 0, 0, 0.75);
+}
+
+* {
+    color: #fff702;
+}
+
+.logo {
+    margin: auto;
+    padding-left: 20%;
+}
+
+.dropdown,
+.dropdown>option {
+    color: black;
+}
+
+@media (min-width: 1366px) {
+    .logo {
+        padding-left: 30%;
+    }
+
+}

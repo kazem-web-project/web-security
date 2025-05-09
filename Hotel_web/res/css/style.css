@@ -1,0 +1,202 @@
+.my-nav {
+
+    background-color: #A67665 !important;
+}
+
+.logo {
+    text-align: center;
+}
+
+#my-help-card {
+    background-color: #D9AB73 !important;
+}
+
+.font-blue {
+    color: #2652BC !important;
+}
+
+.experience-card {
+    background-color: #3C92A6;
+    color: #F2D399;
+}
+
+.my-font-register {
+    color: #F2D399 !important;
+
+}
+
+.my-dropdown {
+    background-color: #D9AB73 !important;
+}
+
+.admin-button {
+    background-color: #3C92A6 !important;
+    color: #F2D399 !important;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #F2D399 !important;
+}
+
+#my-news {
+    background-color: #D9AB73 !important;
+}
+
+.accordion-collapse {
+    color: #2652BC !important;
+}
+
+.my-right-nav {
+    background-color: #2652BC !important;
+}
+
+.accordion-button {
+    color: #F2D399;
+}
+
+.my-reserve-rooms {
+    background-color: #F2D399 !important;
+    color: #3C92A6;
+}
+
+.header-font {
+    color: #F2D399;
+}
+
+body {
+    background-color: #F2D399;
+
+}
+
+.my-nav-header {
+    background-color: #3C92A6 !important;
+
+}
+
+.accordion-body {
+    background-color: #F2D399 !important;
+
+}
+
+.accordion-button {
+    background-color: #2652BC !important;
+
+}
+
+.my-check {
+    background-color: #2652BC !important;
+}
+
+.my-element {
+    margin-bottom: 5px;
+}
+
+.my-button-sizes {
+    padding: 0% !important;
+}
+
+.my_button {
+    background-color: #3C92A6 !important;
+}
+
+.my-card-body {
+    background-color: #F2D399 !important;
+
+}
+
+.my-3 {
+    background-color: #3C92A6 !important;
+    color: white;
+}
+
+.user_card {
+    padding: 0% !important;
+}
+
+#reserve-btn {
+    display: inline;
+}
+
+#blue-approved {
+    z-index: 1;
+}
+
+.approved {
+    margin-top: 20px !important;
+
+}
+
+.my-reserve {
+    background-color: #F2D399;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    background: lightblue;
+    background: radial-gradient(white 30%, lightblue 70%);
+}
+
+.my-text {
+    background-color: #D9AB73 !important;
+
+}
+
+.name-text {
+    color: #F2D399 !important;
+}
+
+/*
+.myimage{
+      if you want to change the size of thumbnails 
+
+}*/
+
+.my-user {
+    padding-top: 50px !important;
+}
+
+#price {
+    margin-top: 20px !important;
+}
+
+.mycheck {
+    text-align: left !important;
+
+}
+
+.datepickers {
+    margin: 25px;
+}
+
+.room_description {
+    padding: 20px 30px;
+}
+
+h1 {
+    margin-top: 25px !important;
+
+}
+
+.fa-star,
+.fa-star-half {
+    color: #2652BC;
+    padding: 3% 0;
+}
+
+.news_card {
+    margin-bottom: 15px;
+    background-color: #F2D399 !important;
+    color: #2652BC;
+}
+
+.my-news-cards {
+    background-color: #D9AB73 !important;
+
+}
+
+@media (max-width: 459px) {
+    #approvedText {
+        display: none;
+    }
+}
