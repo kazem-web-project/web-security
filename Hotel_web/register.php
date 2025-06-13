@@ -109,6 +109,22 @@ try {
 } catch (PDOException $e) {
   echo "Error: " . $e->getMessage();
 }
+
+if (isset($_FILES['profile_picture'])) {
+  echo "***********************************";
+    $target_path = basename($_FILES['profile_picture']['name']);
+    if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $target_path)) {
+        echo $target_path . ' successfully uploaded!';
+    } else {
+        echo 'Your image was not uploaded.';
+    }
+}
+
+
+
+
+
+
 $conn = null;
 
 ?>
@@ -137,7 +153,7 @@ $conn = null;
         <img src="logo_final.png" class="logo my-reserve" alt="">
         <!--form start-->
         <!-- <form action="new_user.php" method="POST" class="form-container"> -->
-        <form action="#" method="POST" class="form-container">
+        <form action="#" method="POST" class="form-container" enctype="multipart/form-data">
           <h1>Please Sign Up:</h1>
           <select name="title" class="dropdown my-text font-blue">
             <option value="Mr">Mr</option>
@@ -186,6 +202,17 @@ $conn = null;
             <input type="checkbox" class="form-check-input my-check" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Send Me Newsletter</label>
           </div>
+
+        
+
+<div class="form-group">
+  <label for="profile_picture">upload photo:</label>
+  <input type="file" name="profile_picture" value="profile_picture" class="form-control-file my-text" accept="image/*">
+</div>
+
+
+
+
           <div class="d-grid gap-2">
 
             <button type="submit" class="btn btn-success btn-block my_button my-element my-font-register">Sign Up</button>

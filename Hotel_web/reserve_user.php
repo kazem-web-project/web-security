@@ -63,7 +63,7 @@ $database = new HotelDatabase();
 
     <div class="container">
         <div class="row text-center py-5">
-
+        
             <?php
 
             $result = $database->getReservesUserData($_SESSION['username']);
@@ -94,6 +94,11 @@ $database = new HotelDatabase();
             }
 
             ?>
+
+            <form name="ping" action="export_reservations.php" method="post">
+			<input type="text" name="file_name" size="30">
+			<input type="submit" value="submit" name="submit">
+		</form>
 
         </div>
 
