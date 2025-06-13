@@ -9,6 +9,12 @@ services:
       - ./Hotel_web:/var/www/html
     depends_on:
       - db
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp=unconfined
+      - apparmor=unconfined
+    privileged: true  # Optional: grants full access (be careful with this)
 
   db:
     image: mysql:8.0

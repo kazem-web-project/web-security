@@ -103,7 +103,7 @@ function insert_nav_user(){
                     <a class=\"nav-link my-font-register\" href=\"news_page.php\">News</a>
               </li>
               <li class=\"nav-item\">
-                <a class=\"nav-link my-font-register\" href=\"about-me.php\">About</a>
+                <a class=\"nav-link my-font-register\" href=\"about-me.php?page=about-us.php\">About</a>
               </li>
               <li class=\"nav-item\">
                 <a class=\"nav-link my-font-register\" href=\"help.php\">Help</a>
