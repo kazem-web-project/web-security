@@ -273,5 +273,10 @@ class HotelDatabase
             echo "Error: " . $sql . "<br>" . mysqli_error($this->con);
         }
     }
+    public function exec_query($sql){
+        // echo $sql;
+        $result = $this->con->query($sql);
 
+        return $result;
+    }
 }

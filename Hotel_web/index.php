@@ -12,14 +12,57 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && !empty($_POST["use
   // create instance of database
   $database = new HotelDatabase();
   // echo $_POST['username'] . $_POST['password'] ;
-  $username = $_POST['username'];
+  //$username = $_POST['username'];
   //echo "my Pass: ". $_POST['password'];
-  // $password = password_hash($_POST['password'] , PASSWORD_DEFAULT); 
-
+  //$password = password_hash($_POST['password'] , PASSWORD_DEFAULT); 
+$password = hash('sha256', $_POST['password'] );
   //echo "my hash Pass: ". $password . '<br>';
   // echo '<br>    '. $password . '   ssssssssssssssssssssss' . $_POST['password'] . 'aaa';
-  $result = $database->get_user_hash($username);
   // echo $result;
+  
+  $user_input =  $_POST['username'];// e.g., ?username=admin' OR '1'='1
+  //$password_from_db = $database->get_user_hash($user_input);
+  
+  
+  //$conn = new mysqli("localhost", "root", "", "mydb");
+  
+  // Dangerous: directly embedding user input into SQL query
+  $sql = "SELECT * FROM users WHERE username = '$user_input' AND password='$password'";
+  //echo $sql;
+  $result = $database->exec_query($sql);
+  //var_dump($result);
+
+if ($result->num_rows > 0) {
+      $row = $result->fetch_assoc();
+
+  //echo "++++++++++++++++++++++++++++++" . $row['username'];
+        $_SESSION["username"] = $row['username'];
+        $_SESSION["first_name"] = $row['first_name'];
+        $_SESSION["last_name"] = $row['last_name'];;
+        $_SESSION["email"] = $row['email'];
+        $_SESSION["gender"] = $row['gender'];
+        $_SESSION["password"] =   $row['password'];
+
+        //echo '<br>aaaaaaaaaaaaaaaa' . $_SESSION["password"] ;
+        $_SESSION["title"] = $row['title'];
+        $_SESSION["is_admin"] = $row['is_admin'];
+        $_SESSION["is_active"] = $row['is_active'];
+        //echo $_SESSION['username'] . $_SESSION['password'];   
+        //echo  $_SESSION["username"] . "111111111111111111111111111111";
+        header('Location: ' . $rooms_url);
+      
+      } else {
+    echo "User not found.";
+}
+}
+//$con->close();
+
+
+
+/*
+
+
+
   if (null != $result) {
 
     while ($row = mysqli_fetch_assoc($result)) {
@@ -49,8 +92,8 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && !empty($_POST["use
     // echo "No data!";
   }
 }
-
 //echo $_SESSION["username"];
+*/
 
 ?>
 

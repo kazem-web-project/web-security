@@ -170,17 +170,17 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `first_name`, `last_name`, `email`, `gender`, `password`, `title`, `is_admin`, `is_active`) VALUES
-('administrator', 'admin', 'admin', 'admin@hotel.com', 'man', '$2y$10$C6rPHEPk.4NUHoLQ/xZGJeg2CrELqAFFi6jlLjznd2QcX1qkE3M9K', 'Mr', 1, 1),
-('edison', 'Tomas', 'Edison', 'edison@gmail.com', 'man', '$2y$10$hZoYVxXvKyvCcJw40XW4lOH3ZzjsnV8my4QeJAnMb.a.wSGRJuWoC', 'Mr', 0, 0),
-('gates', 'Bill', 'Gates', 'gates@microsoft.com', 'man', '$2y$10$.W7zp0MdBre/oW.sUl6xHOkIdExCPYqeaNjQ02xEXDvI3rInltEne', 'Mr', 0, 1),
-('Huber', 'Christian', 'Huber', 'Huber@fh.com', 'man', '$2y$10$0MtV0lldoE81U7DCTqNxFO1UNBOn8keBt1dGtaaQNyXK9Z19plMI.', 'Mr', 0, 1),
-('johny', 'Johny', 'Depp', 'dep@yahoo.com', 'man', '$2y$10$UUAme34fvHWgMh1qcnqVHOM9idhEBrzLHy9tFCFhaPEf/.GASGF9y', 'Mr', 0, 1),
-('joilie', 'Angelina', 'Jolie', 'jolie@hollywood.com', 'woman', '$2y$10$8Zyc3cEvJWJg5FYX1QQC5eoOxmK50Tsj72EesxSw/7E4L8tzAMhIm', 'Mr', 0, 0),
-('kazem', 'Kazem', 'Gholibeigian', 'gholibeigian@gmail.com', 'man', '$2y$10$0YVSOXfuc4iklD87UXNHZ.A8BjeTI83YE5oqzrI/ACAFLfDvzRXNS', 'Mr', 1, 1),
-('obama', 'Barak', 'Obama', 'obama@gmx.at', 'man', '$2y$10$Dsofp8FHA64KCyMB9BRw9uK8yi3Fn2tEfs5bZ6O2AiBrPV54AEHUm', 'Mr', 0, 0),
-('Rohatsch', 'Lukas', 'Rohatsch', 'Rohatsch@fh.at', 'man', '$2y$10$0I/7g9xbuR0EZzdtZGBSFe3KYd77hvAAIRaM.QIs4eaIpIlpT.Ilq', 'Mr', 0, 1),
-('Rongitsch', 'Thomas', 'Rongitsch', 'Rongitsch@fh.at', 'man', '$2y$10$tWUvEBvreW.UdGoL2E.w2ejB./bTzPRJoBn0MpTMBviS15X.Lgph6', 'Mr', 0, 1),
-('trump', 'Donald', 'Trump', 'trump@trump.com', 'man', '$2y$10$ZIlNflCRPkDG3T3oeua15.8fCBm0gahcYMf/FP5GioXNmPNo4Tnm6', 'Mr', 0, 1);
+('administrator', 'admin', 'admin', 'admin@hotel.com', 'man', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Mr', 1, 1),
+('edison', 'Tomas', 'Edison', 'edison@gmail.com', 'man', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Mr', 0, 0),
+('gates', 'Bill', 'Gates', 'gates@microsoft.com', 'man', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Mr', 0, 1),
+('Huber', 'Christian', 'Huber', 'Huber@fh.com', 'man', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3' ,'Mr', 0, 1),
+('johny', 'Johny', 'Depp', 'dep@yahoo.com', 'man', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Mr', 0, 1),
+('joilie', 'Angelina', 'Jolie', 'jolie@hollywood.com', 'woman', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Mr', 0, 0),
+('kazem', 'Kazem', 'Gholibeigian', 'gholibeigian@gmail.com', 'man', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Mr', 1, 1),
+('obama', 'Barak', 'Obama', 'obama@gmx.at', 'man', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Mr', 0, 0),
+('Rohatsch', 'Lukas', 'Rohatsch', 'Rohatsch@fh.at', 'man', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Mr', 0, 1),
+('Rongitsch', 'Thomas', 'Rongitsch', 'Rongitsch@fh.at', 'man', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Mr', 0, 1),
+('trump', 'Donald', 'Trump', 'trump@trump.com', 'man', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Mr', 0, 1);
 
 --
 -- Indexes for dumped tables

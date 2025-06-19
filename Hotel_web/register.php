@@ -58,7 +58,8 @@ try {
 */
     $username = $_POST["username"];
     $username_check = $username;
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    // $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    $password = hash('sha256', $_POST["password"]);
     // password_hash($password,PASSWORD_DEFAULT);
     $password_check = $password;
     $first_name = $_POST["first_name"];
@@ -70,9 +71,11 @@ try {
     $is_admin = 0;
     $is_active = 1;
 
-
+    
     $database = new HotelDatabase();
-    if (password_verify($_POST["password2"], $password)) {
+
+    if ($_POST["password2"]== $_POST["password"]) {
+      echo "i am here";
       $database->insert_new_user($username, $first_name, $last_name, $email, $gender, $password, $title, $is_admin, $is_active);
       // $stmt->execute();
     } else {
