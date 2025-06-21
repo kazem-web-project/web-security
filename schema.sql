@@ -159,7 +159,7 @@ CREATE TABLE `users` (
   `last_name` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `gender` varchar(50) DEFAULT NULL,
-  `password` varchar(60) DEFAULT NULL,
+  `password` varchar(124) DEFAULT NULL,
   `title` varchar(50) DEFAULT NULL,
   `is_admin` tinyint(1) DEFAULT NULL,
   `is_active` tinyint(1) DEFAULT NULL
