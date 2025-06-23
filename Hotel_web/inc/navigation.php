@@ -47,7 +47,10 @@ function insert_nav_guest(){
               <a class=\"nav-link my-font-register\" href=\"about-me.php?page=about-us.php\">About</a>
             </li>
             <li class=\"nav-item\">
-              <a class=\"nav-link my-font-register\" href=\"help.php\">Help</a>
+            <a class=\"nav-link my-font-register\" href=\"help.php\">Help</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link my-font-register\" href=\"room_information.php\">Check Availability</a>
             </li>
               <li class=\"nav-item dropdown\">
                 <a class=\"nav-link dropdown-toggle my-font-register\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
@@ -106,11 +109,14 @@ function insert_nav_user(){
                 <a class=\"nav-link my-font-register\" href=\"about-me.php?page=about-us.php\">About</a>
               </li>
               <li class=\"nav-item\">
-                <a class=\"nav-link my-font-register\" href=\"help.php\">Help</a>
+              <a class=\"nav-link my-font-register\" href=\"help.php\">Help</a>
               </li>
               <li class=\"nav-item\">
-                <a class=\"nav-link my-font-register\" href=\"reserve_user.php\">My Reservations</a>
+              <a class=\"nav-link my-font-register\" href=\"reserve_user.php\">My Reservations</a>
               </li>      
+              <li class=\"nav-item\">
+                <a class=\"nav-link my-font-register\" href=\"room_information.php\">Check Availability</a>
+              </li>
               <li class=\"nav-item dropdown\">
                 <a class=\"nav-link dropdown-toggle my-font-register\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
                   Account
@@ -173,14 +179,17 @@ function insert_nav_admin(){
               <a class=\"nav-link my-font-register\" href=\"about-me.php?page=about-us.php\">About</a>
             </li>
             <li class=\"nav-item\">
-              <a class=\"nav-link my-font-register\" href=\"help.php\">Help</a>
+            <a class=\"nav-link my-font-register\" href=\"help.php\">Help</a>
             </li>
             <li class=\"nav-item\">
-              <a class=\"nav-link my-font-register\" href=\"reserves.php\">Reservations</a>
+            <a class=\"nav-link my-font-register\" href=\"reserves.php\">Reservations</a>
             </li> 
             <li class=\"nav-item\">
-              <a class=\"nav-link my-font-register\" href=\"users.php\">Users</a>
+            <a class=\"nav-link my-font-register\" href=\"users.php\">Users</a>
             </li> 
+            <li class=\"nav-item\">
+                <a class=\"nav-link my-font-register\" href=\"room_information.php\">Check Availability</a>
+              </li>
               <li class=\"nav-item dropdown\">
                 <a class=\"nav-link dropdown-toggle  my-font-register\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
                   Account

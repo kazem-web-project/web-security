@@ -194,6 +194,9 @@ h1 {
     background-color: #D9AB73 !important;
 
 }
+#info_form{
+    margin: 15px !important;
+}
 
 @media (max-width: 459px) {
     #approvedText {
