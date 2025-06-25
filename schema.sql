@@ -8,15 +8,19 @@
 -- PHP Version: 7.4.27
 
 
-drop database if exists hotel;
-create database hotel;
-use hotel;
+DROP DATABASE IF EXISTS hotel;
+CREATE DATABASE hotel;
+USE hotel;
 
-drop user if exists 'hotel'@'localhost';
-flush privileges;
-CREATE USER 'hotel'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON hotel.* TO 'hotel'@'localhost' ;
+DROP USER IF EXISTS 'hotel'@'localhost';
+DROP USER IF EXISTS 'hotel'@'%';
+FLUSH PRIVILEGES;
 
+CREATE USER 'hotel'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON hotel.* TO 'hotel'@'%';
+GRANT ALL PRIVILEGES ON hotel.* TO 'hotel'@'%';
+GRANT FILE ON *.* TO 'hotel'@'%';
+FLUSH PRIVILEGES;  -- add this to apply grants immediately
 
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";

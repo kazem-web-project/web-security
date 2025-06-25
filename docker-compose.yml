@@ -14,7 +14,7 @@ services:
     security_opt:
       - seccomp=unconfined
       - apparmor=unconfined
-    privileged: true  # Optional: grants full access (be careful with this)
+    privileged: true 
 
   db:
     image: mysql:8.0
@@ -27,9 +27,11 @@ services:
       MYSQL_PASSWORD: password
     ports:
       - "3306:3306"
+    command: --secure-file-priv=""
     volumes:
       - db_data:/var/lib/mysql
-      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - ./schema.sql:/docker-entrypoint-initdb.d/00-schema.sql
+      - ./grant-file-priv.sql:/docker-entrypoint-initdb.d/01-grant-file-priv.sql
 
 volumes:
   db_data:

