@@ -197,7 +197,16 @@ h1 {
 #info_form{
     margin: 15px !important;
 }
+#chat-box {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    overflow-y: auto;
+    height: 100%;
+}
 
+.card-footer input[type="text"] {
+    flex-grow: 1;
+}
 @media (max-width: 459px) {
     #approvedText {
         display: none;

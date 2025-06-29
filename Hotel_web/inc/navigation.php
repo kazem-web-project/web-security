@@ -48,6 +48,9 @@ function insert_nav_guest(){
             </li>
             <li class=\"nav-item\">
             <a class=\"nav-link my-font-register\" href=\"help.php\">Help</a>
+            </li>            
+            <li class=\"nav-item\">
+            <a class=\"nav-link my-font-register\" href=\"contact-us.php\">Contact Us</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link my-font-register\" href=\"room_information.php\">Check Availability</a>
@@ -111,6 +114,9 @@ function insert_nav_user(){
               <li class=\"nav-item\">
               <a class=\"nav-link my-font-register\" href=\"help.php\">Help</a>
               </li>
+              <li class=\"nav-item\">
+            <a class=\"nav-link my-font-register\" href=\"contact-us.php\">Contact Us</a>
+            </li>
               <li class=\"nav-item\">
               <a class=\"nav-link my-font-register\" href=\"reserve_user.php\">My Reservations</a>
               </li>      
@@ -180,6 +186,9 @@ function insert_nav_admin(){
             </li>
             <li class=\"nav-item\">
             <a class=\"nav-link my-font-register\" href=\"help.php\">Help</a>
+            </li>
+            <li class=\"nav-item\">
+            <a class=\"nav-link my-font-register\" href=\"contact-us.php\">Contact Us</a>
             </li>
             <li class=\"nav-item\">
             <a class=\"nav-link my-font-register\" href=\"reserves.php\">Reservations</a>
