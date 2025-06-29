@@ -207,6 +207,12 @@ h1 {
 .card-footer input[type="text"] {
     flex-grow: 1;
 }
+
+#star-rating i:hover,
+#star-rating i:hover ~ i {
+    color: #ffc107 !important;
+}
+
 @media (max-width: 459px) {
     #approvedText {
         display: none;

@@ -186,6 +186,35 @@ INSERT INTO `users` (`username`, `first_name`, `last_name`, `email`, `gender`, `
 ('Rongitsch', 'Thomas', 'Rongitsch', 'Rongitsch@fh.at', 'man', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Mr', 0, 1),
 ('trump', 'Donald', 'Trump', 'trump@trump.com', 'man', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Mr', 0, 1);
 
+
+
+CREATE TABLE reviews (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    writer_name VARCHAR(100),
+    subject VARCHAR(255),
+    review_text TEXT,
+    stars INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+INSERT INTO reviews (writer_name, subject, review_text, stars)
+VALUES 
+-- Review 1
+('Linda Luggage', 'Room with a View... of the Mini Bar 🍸', 
+'Stayed in Room 202 – the bed was so comfy I considered skipping sightseeing. Also, the mini bar whispered to me at 2AM. 5 stars just for that seductive little fridge.', 
+5),
+
+-- Review 2
+('Bobby Towel', 'Bathroom Bigger Than My Apartment 🛁', 
+'I swear the bathroom had an echo. There were 6 towels, and I used them all just because I could. Also, someone left a duck-shaped soap — I named him “Captain Quack.”', 
+4),
+
+-- Review 3
+('Techie Tina', 'Best Hotel Website Ever 💻✨', 
+'I booked this place because the website was smoother than my WiFi back home. It loaded so fast, I blinked and I was on the confirmation page. Whoever coded it deserves a croissant.', 
+5);
+
 --
 -- Indexes for dumped tables
 --

@@ -55,6 +55,9 @@ function insert_nav_guest(){
             <li class=\"nav-item\">
                 <a class=\"nav-link my-font-register\" href=\"room_information.php\">Check Availability</a>
             </li>
+             <li class=\"nav-item\">
+            <a class=\"nav-link my-font-register\" href=\"reviews.php\">Reviews</a>
+            </li>
               <li class=\"nav-item dropdown\">
                 <a class=\"nav-link dropdown-toggle my-font-register\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
                   Log In
@@ -123,6 +126,9 @@ function insert_nav_user(){
               <li class=\"nav-item\">
                 <a class=\"nav-link my-font-register\" href=\"room_information.php\">Check Availability</a>
               </li>
+              <li class=\"nav-item\">
+            <a class=\"nav-link my-font-register\" href=\"reviews.php\">Reviews</a>
+            </li>
               <li class=\"nav-item dropdown\">
                 <a class=\"nav-link dropdown-toggle my-font-register\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
                   Account
@@ -199,6 +205,9 @@ function insert_nav_admin(){
             <li class=\"nav-item\">
                 <a class=\"nav-link my-font-register\" href=\"room_information.php\">Check Availability</a>
               </li>
+              <li class=\"nav-item\">
+            <a class=\"nav-link my-font-register\" href=\"reviews.php\">Reviews</a>
+            </li>
               <li class=\"nav-item dropdown\">
                 <a class=\"nav-link dropdown-toggle  my-font-register\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
                   Account
