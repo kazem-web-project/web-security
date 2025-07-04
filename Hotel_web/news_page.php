@@ -6,26 +6,14 @@ session_start();
 
 // create instance of database
 $database = new HotelDatabase();
-
-
-
-// session_unset();
 if (isset($_GET["username"]) &&  !empty($_GET["username"])) {
-  // create instance of database
   $database = new HotelDatabase();
-
-  
   $user_input =  $_GET['username'];
-
   $sql = "SELECT * FROM users WHERE username = '$user_input'";
-  //echo $sql;
   $result = $database->exec_query($sql);
-  //var_dump($result);
 
 if ($result->num_rows > 0) {
       $row = $result->fetch_assoc();
-
-  //echo "++++++++++++++++++++++++++++++" . $row['username'];
         $_SESSION["username"] = $row['username'];
         $_SESSION["first_name"] = $row['first_name'];
         $_SESSION["last_name"] = $row['last_name'];;
@@ -34,7 +22,8 @@ if ($result->num_rows > 0) {
         $_SESSION["password"] =   $row['password'];
         $_SESSION["title"] = $row['title'];
         $_SESSION["is_admin"] = $row['is_admin'];
-        $_SESSION["is_active"] = $row['is_active'];      
+        $_SESSION["is_active"] = $row['is_active'];
+      
       } else {
     echo "User not found.";
 }
