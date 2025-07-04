@@ -41,7 +41,7 @@ function insert_nav_guest(){
             </li>
             
             <li class=\"nav-item\">
-                  <a class=\"nav-link my-font-register\" href=\"news_page.php\">News</a>
+              <a class=\"nav-link my-font-register\" href=\"news_page.php?username=$username\">News</a>
             </li>
             <li class=\"nav-item\">
               <a class=\"nav-link my-font-register\" href=\"about-me.php?page=about-us.php\">About</a>
@@ -109,7 +109,7 @@ function insert_nav_user(){
               </li>
               
               <li class=\"nav-item\">
-                    <a class=\"nav-link my-font-register\" href=\"news_page.php\">News</a>
+                    <a class=\"nav-link my-font-register\" href=\"news_page.php?username=$username\">News</a>
               </li>
               <li class=\"nav-item\">
                 <a class=\"nav-link my-font-register\" href=\"about-me.php?page=about-us.php\">About</a>
@@ -185,7 +185,7 @@ function insert_nav_admin(){
             </li>
             
             <li class=\"nav-item\">
-                  <a class=\"nav-link my-font-register\" href=\"news_page.php\">News</a>
+                <a class=\"nav-link my-font-register\" href=\"news_page.php?username=$username\">News</a>
             </li>
             <li class=\"nav-item\">
               <a class=\"nav-link my-font-register\" href=\"about-me.php?page=about-us.php\">About</a>
