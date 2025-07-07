@@ -37,6 +37,9 @@ RUN sed -i 's|SSLCertificateFile.*|SSLCertificateFile /etc/apache2/ssl/apache.cr
 # Force Apache to accept HTTP/1.0
 RUN echo 'Protocols http/1.0 http/1.1' >> /etc/apache2/apache2.conf
 
+# Enable HTTP TRACE method
+RUN echo 'TraceEnable On' >> /etc/apache2/apache2.conf
+
 # Copy app files to Apache's web root
 COPY ./Hotel_web/ /var/www/html/
 
