@@ -9,7 +9,6 @@ if (!isset($_SESSION) || empty($_SESSION)) {
 }
 $room_id_input = $_GET['room_id'];
 
-$room_price_input = $_GET['price'];
 $animal_price = 0;
 $breakfast_price = 0;
 $pet_price = 0;
@@ -37,6 +36,7 @@ if (isset($_POST['from_date']) && isset($_POST['to_date'])) {
     ($_POST['breakfast_check'] == "1") ? $breakfast_price = ($stay_days * 7) : $breakfast_price = (0);
     ($_POST['pet_checkbox'] == "1") ? $pet_price = 10 : $pet_price = 0;
     // echo $pet_price;
+    $room_price_input = $_COOKIE['price'];
     $room_price = ($stay_days * $room_price_input);
     echo $room_price . "roooooooooooooom";
     $end_price = $room_price + $parking_price + $breakfast_price + $pet_price;
@@ -87,6 +87,12 @@ if ((!isset($_GET['room_id']) && !isset($_GET['room_price'])) &&
     header("Location: rooms.php");
     //header("Location: reserve_room.php");
     //exit();
+}else{
+    $room_price_input = $_GET['price'];
+
+// Set the cookie to expire in 1 day
+    setcookie('price', $room_price_input, time() + 86400, "/");
+
 }
 
 
@@ -187,7 +193,21 @@ if ((!isset($_GET['room_id']) && !isset($_GET['room_price'])) &&
                     <!-- price and room number-->
                     <div class="border border-light">
                         <div>Room Number: <?php echo  $room_id_input ?></div>
-                        <div>Price per night: €<?php echo $room_price_input ?></div>
+                        <div>Price per night: €<?php 
+                            // Broken Access Control: Example
+                            //Storing Information in Cookies
+
+                            if (isset($_COOKIE['price'])) {
+                                $room_price_input = $_COOKIE['price'];
+                                echo $room_price_input; 
+                            } else {
+                                $price = 'not set'; // fallback value
+                                echo $room_price_input;
+                            }
+                            
+                            //echo $room_price_input 
+                            ?>
+                        </div>
                     </div>
                     <!-- buttons-->
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
