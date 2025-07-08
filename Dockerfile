@@ -13,6 +13,10 @@ RUN for ini in /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 # Enable Apache mod_rewrite and SSL
 RUN a2enmod rewrite ssl
 
+# Allow access from all IPs
+RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/Require all denied/Require all granted/' /etc/apache2/apache2.conf && \
+    sed -i '/<Directory \/var\/www\/html\/>/,/<\/Directory>/ s/Require all denied/Require all granted/' /etc/apache2/apache2.conf
+
 # Install openssl and enable the default SSL site
 RUN apt-get update && apt-get install -y openssl && \
     a2ensite default-ssl
@@ -39,6 +43,10 @@ RUN echo 'Protocols http/1.0 http/1.1' >> /etc/apache2/apache2.conf
 
 # Enable HTTP TRACE method
 RUN echo 'TraceEnable On' >> /etc/apache2/apache2.conf
+
+# Create session directory and set PHP session path
+RUN mkdir -p /var/lib/php/sessions && chmod 733 /var/lib/php/sessions && \
+    echo "session.save_path = /var/lib/php/sessions" >> /usr/local/etc/php/conf.d/session.ini
 
 # Copy app files to Apache's web root
 COPY ./Hotel_web/ /var/www/html/
