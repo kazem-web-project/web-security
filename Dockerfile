@@ -3,6 +3,12 @@ FROM php:8.2-apache
 # Install PHP extensions
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
+# Copy your custom PHP config
+COPY php.ini /usr/local/etc/php/
+
+# Create PHP log directory and set permissions
+RUN mkdir -p /var/log/php && touch /var/log/php/php_errors.log && chmod -R 777 /var/log/php
+
 # Enable allow_url_include and allow_url_fopen in php.ini files
 RUN for ini in /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini-production; do \
         sed -i 's/allow_url_include = Off/allow_url_include = On/' "$ini" && \
@@ -13,9 +19,11 @@ RUN for ini in /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 # Enable Apache mod_rewrite and SSL
 RUN a2enmod rewrite ssl
 
-# Allow access from all IPs
-RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/Require all denied/Require all granted/' /etc/apache2/apache2.conf && \
+# Add ServerName directive and fix directory access permissions
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
+    sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/Require all denied/Require all granted/' /etc/apache2/apache2.conf && \
     sed -i '/<Directory \/var\/www\/html\/>/,/<\/Directory>/ s/Require all denied/Require all granted/' /etc/apache2/apache2.conf
+
 
 # Install openssl and enable the default SSL site
 RUN apt-get update && apt-get install -y openssl && \
@@ -53,3 +61,16 @@ COPY ./Hotel_web/ /var/www/html/
 
 # Set correct permissions
 RUN chown -R www-data:www-data /var/www/html
+
+# Redirect Apache logs into PHP log file
+RUN ln -sf /var/log/php/php_errors.log /var/log/apache2/access.log && \
+    ln -sf /var/log/php/php_errors.log /var/log/apache2/error.log
+
+# Ensure /var/log/php exists and is writable
+RUN mkdir -p /var/log/php && chmod -R 777 /var/log/php
+
+# Force PHP to log errors to that file
+RUN echo "log_errors=On" >> /usr/local/etc/php/conf.d/logging.ini && \
+    echo "error_log=/var/log/php/php_errors.log" >> /usr/local/etc/php/conf.d/logging.ini
+
+CMD ["apache2-foreground"]

@@ -7,6 +7,9 @@ $errors = [];
 $rooms_url = "rooms.php";
 
 
+
+
+
 // session_unset();
 if (isset($_POST["username"]) && isset($_POST["password"]) && !empty($_POST["username"]) && !empty($_POST["password"])) {
   // create instance of database
@@ -14,14 +17,16 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && !empty($_POST["use
   // echo $_POST['username'] . $_POST['password'] ;
   //$username = $_POST['username'];
   //echo "my Pass: ". $_POST['password'];
-  //$password = password_hash($_POST['password'] , PASSWORD_DEFAULT); 
-$password = hash('sha256', $_POST['password'] );
+  //$password = password_hash($_POST['password'] , PASSWORD_DEFAULT);
+  $password = hash('sha256', $_POST['password'] );
   //echo "my hash Pass: ". $password . '<br>';
   // echo '<br>    '. $password . '   ssssssssssssssssssssss' . $_POST['password'] . 'aaa';
   // echo $result;
   
   $user_input =  $_POST['username'];// e.g., ?username=admin' OR '1'='1
+  $pass_log = $_POST['password']; 
   //$password_from_db = $database->get_user_hash($user_input);
+  error_log("User login attempt: $user_input with password: $pass_log at " . date('Y-m-d H:i:s'));
   
   
   //$conn = new mysqli("localhost", "root", "", "mydb");

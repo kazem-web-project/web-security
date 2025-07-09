@@ -8,7 +8,8 @@ services:
       - "8443:443"
     volumes:
       - ./Hotel_web:/var/www/html
-      - php_sessions:/var/lib/php/sessions  # persist session files
+      - php_sessions:/var/lib/php/sessions     # Persist PHP session files
+      - ./logs/php:/var/log/php                # Mount local logs directory instead of single log file
     depends_on:
       - db
     cap_add:
@@ -16,7 +17,7 @@ services:
     security_opt:
       - seccomp=unconfined
       - apparmor=unconfined
-    privileged: true 
+    privileged: true
 
   db:
     image: mysql:8.0
@@ -37,4 +38,4 @@ services:
 
 volumes:
   db_data:
-  php_sessions:  # volume for PHP sessions
+  php_sessions:

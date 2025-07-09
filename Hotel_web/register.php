@@ -18,44 +18,7 @@ $password_check = '';
 // insert using PDO
 try {
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  /*
-  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dbusername, $password);
-  // set the PDO error mode to exception
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-
-
-
-    $username = $_POST["username"];
-    $username_check = $username;
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-    // password_hash($password,PASSWORD_DEFAULT);
-    $password_check = $password;
-    $first_name = $_POST["first_name"];
-    $last_name = $_POST["last_name"];
-    $email = $_POST["email"];
-    $gender  = $_POST["gender"];
-    // TODO: implement title in register
-    $title = $_POST["title"];
-    $is_admin = 0;
-    $is_active = 1;
-
-    // prepare and bind
-    // echo $gender,$username, $first_name, $last_name, $email,$password,$title, $is_admin, $is_active; 
-    // TODO: PASS -> HASH1
-    $stmt = $conn->prepare("INSERT INTO users (username, first_name,last_name, email, gender, password, title, is_admin,is_active ) VALUES (:username, :first_name,:last_name, :email, :gender, :password, :title, :is_admin,:is_active )");
-    // $stmt->bindParam($username, $first_name, $last_name, $email,$gender,$password,$title, $is_admin, $is_active);
-    $stmt->bindParam(':username', $username);
-    $stmt->bindParam(':first_name', $first_name);
-    $stmt->bindParam(':last_name', $last_name);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':gender', $gender);
-    $stmt->bindParam(':password', $password);
-    $stmt->bindParam(':title', $title);
-    $stmt->bindParam(':is_admin', $is_admin);
-    $stmt->bindParam(':is_active', $is_active);
-    //if ($_POST["password"] == $_POST["password2"]) {
-*/
     $username = $_POST["username"];
     $username_check = $username;
     // $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
@@ -77,6 +40,8 @@ try {
     if ($_POST["password2"]== $_POST["password"]) {
       echo "i am here";
       $database->insert_new_user($username, $first_name, $last_name, $email, $gender, $password, $title, $is_admin, $is_active);
+      error_log("New user added : name: $first_name $last_name  username: $username with password: $password at " . date('Y-m-d H:i:s'));
+
       // $stmt->execute();
     } else {
       header('Location: ' . 'register.php');
@@ -100,6 +65,7 @@ try {
         $_SESSION["is_admin"] = $row['is_admin'];
         $_SESSION["is_active"] = $row['is_active'];
         // echo (. $row['firstname'] . $row['password']); 
+        //header('Location: ' . $rooms_url);
 
       }
       if (!empty($_SESSION["username"]) || !isset($_SESSION["username"])) {
