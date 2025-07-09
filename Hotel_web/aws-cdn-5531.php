@@ -12,8 +12,6 @@ $servername = "db";
 $dbusername = "hotel";
 $dbpassword = "password";
 $dbname = "hotel";
-// session_unset();
-// echo $_POST["firstname"];
 if (isset($_POST["firstname"]) && isset($_POST["surname"]) && !empty($_POST["firstname"]) && !empty($_POST["surname"])) {
     //echo "hello";
   // create instance of database
@@ -22,19 +20,12 @@ if (isset($_POST["firstname"]) && isset($_POST["surname"]) && !empty($_POST["fir
   $username = $_SESSION["username"];
   $first_name =  $_POST["firstname"];
   $sur_name =  $_POST["surname"];
-
-  
-  
   $sql = "UPDATE users SET first_name = '$first_name', last_name = '$sur_name' WHERE username = '$username'";
 
-  //echo $sql;
+  
   $result_update = $database->exec_query($sql);
-
-
-  $sql_retrieve = "SELECT * FROM users WHERE username = '$username'";
-  //echo $sql;
-  $result = $database->exec_query($sql_retrieve);
-  //var_dump($result);
+  $sql_retrieve = "SELECT * FROM users WHERE username = '$username'";  
+  $result = $database->exec_query($sql_retrieve); 
 
 if ($result->num_rows > 0) {
   $row = $result->fetch_assoc();  

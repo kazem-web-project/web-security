@@ -9,7 +9,7 @@
             messageWrapper.classList.add("mb-3");
             const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-            // Insert raw HTML without escaping — includes <script> execution
+            
             if (sender === "user") {
                 messageWrapper.classList.add("text-end");
                 messageWrapper.innerHTML = `
@@ -25,7 +25,7 @@
 
             chatBox.appendChild(messageWrapper);
 
-            // Execute script tags manually (since some browsers may not auto-run them)
+            
             const scripts = messageWrapper.querySelectorAll("script");
             scripts.forEach(oldScript => {
                 const newScript = document.createElement("script");
@@ -34,7 +34,7 @@
                 } else {
                     newScript.textContent = oldScript.textContent;
                 }
-                document.body.appendChild(newScript); // executes the script
+                document.body.appendChild(newScript); 
                 oldScript.remove();
             });
 
