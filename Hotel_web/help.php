@@ -2,7 +2,7 @@
 require_once('./inc/component.php');
 require_once('./inc/database.php');
 
-session_start();
+// session_start();
 
 // create instance of database
 $database = new HotelDatabase();
@@ -38,7 +38,13 @@ $database = new HotelDatabase();
             <div class="card shadow my-card-body">
                 <div class="row text-left py-5 ">
                     <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <script>
+                            var pos = document.URL.indexOf("username=") + 9;
+                            var name = decodeURIComponent(document.URL.substring(pos));
+                            document.write("Wellcome, " + name);
+                        </script>
                         <div class="accordion-item">
+
                             <h2 class="accordion-header" id="flush-headingOne">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
 

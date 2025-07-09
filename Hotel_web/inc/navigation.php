@@ -47,7 +47,7 @@ function insert_nav_guest(){
               <a class=\"nav-link my-font-register\" href=\"about-me.php?page=about-us.php\">About</a>
             </li>
             <li class=\"nav-item\">
-            <a class=\"nav-link my-font-register\" href=\"help.php\">Help</a>
+            <a class=\"nav-link my-font-register\" href=\"help.php?username=$username\">Help</a>
             </li>            
             <li class=\"nav-item\">
             <a class=\"nav-link my-font-register\" href=\"contact-us.php\">Contact Us</a>
@@ -115,7 +115,7 @@ function insert_nav_user(){
                 <a class=\"nav-link my-font-register\" href=\"about-me.php?page=about-us.php\">About</a>
               </li>
               <li class=\"nav-item\">
-              <a class=\"nav-link my-font-register\" href=\"help.php\">Help</a>
+              <a class=\"nav-link my-font-register\" href=\"help.php?username=$username\">Help</a>
               </li>
               <li class=\"nav-item\">
             <a class=\"nav-link my-font-register\" href=\"contact-us.php\">Contact Us</a>
@@ -191,7 +191,7 @@ function insert_nav_admin(){
               <a class=\"nav-link my-font-register\" href=\"about-me.php?page=about-us.php\">About</a>
             </li>
             <li class=\"nav-item\">
-            <a class=\"nav-link my-font-register\" href=\"help.php\">Help</a>
+            <a class=\"nav-link my-font-register\" href=\"help.php?username=$username\">Help</a>
             </li>
             <li class=\"nav-item\">
             <a class=\"nav-link my-font-register\" href=\"contact-us.php\">Contact Us</a>
