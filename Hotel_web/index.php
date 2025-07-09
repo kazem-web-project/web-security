@@ -18,7 +18,7 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && !empty($_POST["use
   //$username = $_POST['username'];
   //echo "my Pass: ". $_POST['password'];
   //$password = password_hash($_POST['password'] , PASSWORD_DEFAULT);
-  $password = hash('sha256', $_POST['password'] );
+  $password = hash('md5', $_POST['password'] );
   //echo "my hash Pass: ". $password . '<br>';
   // echo '<br>    '. $password . '   ssssssssssssssssssssss' . $_POST['password'] . 'aaa';
   // echo $result;

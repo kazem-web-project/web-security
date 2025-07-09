@@ -22,7 +22,7 @@ try {
     $username = $_POST["username"];
     $username_check = $username;
     // $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-    $password = hash('sha256', $_POST["password"]);
+    $password = hash('md5', $_POST["password"]);
     // password_hash($password,PASSWORD_DEFAULT);
     $password_check = $password;
     $first_name = $_POST["first_name"];

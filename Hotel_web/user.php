@@ -39,7 +39,7 @@ if (isset($_SESSION["is_admin"]) && (isset($_POST["new_password1"]) && isset($_P
         // echo '<br>' . hash('sha256',$_SESSION["password"]) . '<br>' .  password_hash($_POST["password"], PASSWORD_DEFAULT). '<br>' ;
         
         //var_dump($_SESSION);  
-        $password_to_check = hash('sha256', $_POST['password'] );
+        $password_to_check = hash('md5', $_POST['password'] );
         $database = new HotelDatabase();
         if (($_POST["new_password2"] == $_POST["new_password1"]) &&  $password_to_check == $_SESSION["password"]) {
             echo 'passsword' . password_verify($_POST["password"], $_SESSION["password"]);
