@@ -8,8 +8,8 @@ services:
       - "8443:443"
     volumes:
       - ./Hotel_web:/var/www/html
-      - php_sessions:/var/lib/php/sessions     # Persist PHP session files
-      - ./logs/php:/var/log/php                # Mount local logs directory instead of single log file
+      - php_sessions:/var/lib/php/sessions
+      - ./logs/php:/var/log/php
     depends_on:
       - db
     cap_add:

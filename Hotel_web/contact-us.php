@@ -27,26 +27,31 @@
 
     <div id=my-news>
 
-       <div class="container-fluid vh-100 d-flex flex-column px-0">
-    <div class="card flex-grow-1 rounded-0 shadow">
-        <div class="card-header bg-primary text-white">
-            Messaging Assistant | Customer Service
-        </div>
-        <div class="card-body overflow-auto" id="chat-box">
-            <div class="mb-3">
-                <div class="text-muted small">1:20 PM</div>
-                <div class="p-2 bg-light rounded d-inline-block">So, what can I help you with?</div>
+        <div class="container-fluid vh-100 d-flex flex-column px-0">
+            <div class="card flex-grow-1 rounded-0 shadow">
+                <div class="card-header bg-primary text-white">
+                    Messaging Assistant | Customer Service
+                </div>
+                <div class="card-body overflow-auto" id="chat-box">
+                    <div class="mb-3">
+                        <div class="text-muted small">1:20 PM</div>
+                        <div class="p-2 bg-light rounded d-inline-block">So, what can I help you with?</div>
+                    </div>
+
+                </div>
+                <div class="card-footer d-flex gap-2">
+                    <input type="text" class="form-control" placeholder="Type your message..." id="chat-input">
+                    <button class="btn btn-primary">Send</button>
+                    <button class="btn btn-secondary" id="send-invoice-btn">Send Invoice</button>
+                </div>
+                <form id="xml-upload-form" style="display:none;" enctype="multipart/form-data">
+                    <input type="file" id="xml-file-input" name="xmlfile" accept=".xml" />
+                </form>
+
             </div>
-            
         </div>
-        <div class="card-footer d-flex gap-2">
-            <input type="text" class="form-control" placeholder="Type your message..." id="chat-input">
-            <button class="btn btn-primary">Send</button>
-        </div>
-    </div>
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <script src="./contact-us.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script src="./contact-us.js"></script>
 
 </body>
 
