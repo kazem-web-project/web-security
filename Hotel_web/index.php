@@ -57,8 +57,23 @@ if ($result->num_rows > 0) {
         header('Location: ' . $rooms_url);
       
       } else {
-    echo "User not found.";
-}
+              $sql_just_username = "SELECT * FROM users WHERE username = '$user_input'";
+              //echo $sql;
+              $result_just_username = $database->exec_query($sql_just_username);
+              if ($result_just_username->num_rows > 0) {
+                $row_just_username = $result_just_username->fetch_assoc();
+                echo '<script type="text/javascript">',
+                    'alert("incorrect password!");',
+                    '</script>'
+                ;
+              //var_dump($result);
+              }else {
+                echo '<script type="text/javascript">',
+                    'alert("Username does not exist!");',
+                    '</script>'
+                ;
+              }
+            }
 }
 //$con->close();
 
