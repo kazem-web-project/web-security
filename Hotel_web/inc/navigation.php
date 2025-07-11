@@ -1,17 +1,18 @@
 <?php
+// Suppress warnings and notices, but still show fatal errors
+//error_reporting(E_ERROR);
+// ini_set('display_errors', 0); // Don't show them in browser
 // edit account in line 120 and ..
 session_start();
 
 function insert_nav(){
     //echo "inside insert_nav";
-    if(isset($_SESSION["username"])){
-        if(isset($_SESSION["is_admin"])){
-            if($_SESSION["is_admin"]=="1"){
+    if(isset($_SESSION["username"])){        
+            if($_COOKIE['is_admin']=="1"){
                 insert_nav_admin();
-            }else{
+            }else if( $_COOKIE['is_admin']=="0"){
                 insert_nav_user();
-            }
-        }
+            }        
     }else{
         insert_nav_guest();
     }

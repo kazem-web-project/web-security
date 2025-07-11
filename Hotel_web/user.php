@@ -1,9 +1,13 @@
 <?php
+// Suppress warnings and notices, but still show fatal errors
+error_reporting(E_ERROR);
+ini_set('display_errors', 0); // Don't show them in browser
+
 require_once('./inc/database.php');
 require_once('./inc/session_setter.php');
 
 session_start();
-error_reporting(E_ALL ^ E_NOTICE);
+// error_reporting(E_ALL ^ E_NOTICE);
 
 $rooms_url = "rooms.php";
 // TODO : change this to orwerview users:
@@ -23,7 +27,7 @@ if (!isset($_SESSION) || empty($_SESSION)) {
     header("Location: index.php");
     exit();
 }
-if (isset($_SESSION["is_admin"]) && (isset($_POST["new_password1"]) && isset($_POST["new_password2"]))) {
+if (isset($_COOKIE['is_admin']) && (isset($_POST["new_password1"]) && isset($_POST["new_password2"]))) {
     // insert using PDO5
     try {
         //$conn = new PDO("mysql:host=$servername;dbname=$dbname", $dbusername, $dbpassword);
@@ -49,7 +53,7 @@ if (isset($_SESSION["is_admin"]) && (isset($_POST["new_password1"]) && isset($_P
             $email = $_POST["email"];
             $gender  = $_POST["gender"];
             $title = $_POST["title"];
-            $is_admin = ($_SESSION["is_admin"] == 1) ? 1 : 0;
+            $is_admin = ($_COOKIE['is_admin'] == 1) ? 1 : 0;
             $is_active = 1;
             // change to hash
             $password = password_hash($_POST["new_password1"], PASSWORD_DEFAULT);

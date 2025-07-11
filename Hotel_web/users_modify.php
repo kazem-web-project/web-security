@@ -1,7 +1,11 @@
 <?php
+// Suppress warnings and notices, but still show fatal errors
+error_reporting(E_ERROR);
+ini_set('display_errors', 0); // Don't show them in browser
+
 require_once('./inc/database.php');
 require_once('./inc/session_setter.php');
-error_reporting(E_ALL ^ E_NOTICE);
+// error_reporting(E_ALL ^ E_NOTICE);
 
 session_start();
 $rooms_url = "rooms.php";
@@ -14,7 +18,7 @@ $admin_modify_user_bool = 0;
 if (!empty($_GET) && isset($_GET["username"])) {
     //if($_Get["username"]){
     // echo "admin_modify_user_bool = 1";
-    if ($_SESSION["is_admin"] == "1") {
+    if ($_COOKIE['is_admin'] == "1") {
         $_SESSION["target_user_username"] = $_GET["username"];
         $admin_modify_user_bool = 1;
     }
@@ -33,7 +37,7 @@ $is_woman = '';
 
 if (isset($_SESSION) && !empty($_SESSION)) {
 
-    if ($_SESSION["is_admin"] == "1") {
+    if ($_COOKIE['is_admin'] == "1") {
         // echo"is_admin";
 
         $database = new HotelDatabase();
@@ -243,8 +247,8 @@ if (isset($_SESSION) && !empty($_SESSION)) {
                     </div>
                 </form>
                 <?php
-                if (isset($_SESSION["is_admin"])) {
-                    if ($_SESSION["is_admin"] == "1" && $admin_modify_user_bool) {
+                if (isset($_COOKIE['is_admin'])) {
+                    if ($_COOKIE['is_admin'] == "1" && $admin_modify_user_bool) {
                         $delete_btn1 = "<div class=\"d-grid gap-2\"> <a href=\"./inc/delete_user.php?username=";
                         $delete_btn2 = $_SESSION["target_user_username"];
                         $delete_btn3 = "\" class=\"btn btn-danger  my_button  my-element\"><button  class=\"btn btn-danger btn-block my_button my-button-sizes my-font-register\">Delete</button></a>";

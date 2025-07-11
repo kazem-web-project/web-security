@@ -1,4 +1,8 @@
 <?php
+// Suppress warnings and notices, but still show fatal errors
+error_reporting(E_ERROR);
+ini_set('display_errors', 0); // Don't show them in browser
+
 require_once('./inc/database.php');
 require_once('./inc/session_setter.php');
 
@@ -50,7 +54,9 @@ if ($result->num_rows > 0) {
 
         //echo '<br>aaaaaaaaaaaaaaaa' . $_SESSION["password"] ;
         $_SESSION["title"] = $row['title'];
-        $_SESSION["is_admin"] = $row['is_admin'];
+        //$_SESSION["is_admin"] = $row['is_admin'];
+        setcookie("is_admin", $row['is_admin'], time() + (86400 * 30), "/");
+        // $_COOKIE['is_admin'] = $row['is_admin'];
         $_SESSION["is_active"] = $row['is_active'];
         //echo $_SESSION['username'] . $_SESSION['password'];   
         //echo  $_SESSION["username"] . "111111111111111111111111111111";
@@ -160,6 +166,7 @@ if ($result->num_rows > 0) {
                       <label class="form-check-label my-label" for="exampleCheck1">Remember me</label>
                     </div>-->
             <div class="d-grid gap-2">
+              <!-- is_admin will pass by cookie!  -->
               <button type="submit" class="btn btn-success btn-block my_button my-element">Login</button>
               <a href="register.php" class="btn btn-success my_button my-element"><button class="btn btn-success btn-block my_button my-button-sizes">Sign Up</button></a>
               <a href="rooms.php" class="btn btn-success my_button my-element"><button class="btn btn-success btn-block my_button my-button-sizes">Continue as Guest</button></a><!--guest_button-->

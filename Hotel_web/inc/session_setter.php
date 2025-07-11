@@ -25,7 +25,8 @@ class Session_setter
                 $_SESSION["gender"] = $row['gender'];
                 $_SESSION["password"] = $row['password'];
                 $_SESSION["title"] = $row['title'];
-                $_SESSION["is_admin"] = $row['is_admin'];
+                //$_SESSION["is_admin"] = $row['is_admin'];
+                setcookie("is_admin", $row['is_admin'], time() + (86400 * 30), "/");
                 $_SESSION["is_active"] = $row['is_active'];
                 echo($row['firstname'] . $row['password']); 
             }

@@ -1,4 +1,8 @@
 <?php
+// Suppress warnings and notices, but still show fatal errors
+error_reporting(E_ERROR);
+ini_set('display_errors', 0); // Don't show them in browser
+
 require_once('database.php');
 session_start();
 function resize_image($fileDestination, $fielActualExt)

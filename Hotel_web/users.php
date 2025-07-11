@@ -1,4 +1,8 @@
 <?php
+// Suppress warnings and notices, but still show fatal errors
+error_reporting(E_ERROR);
+ini_set('display_errors', 0); // Don't show them in browser
+
 require_once('./inc/component.php');
 require_once('./inc/database.php');
 
@@ -8,7 +12,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 
 
 if (isset($_SESSION)) {
-    if ($_SESSION["is_admin"] != "1") {
+    if ($_COOKIE['is_admin'] != "1") {
         // load admin components;
         var_dump($_SESSION);
         $url = "rooms.php";

@@ -1,4 +1,8 @@
 <?php
+// Suppress warnings and notices, but still show fatal errors
+error_reporting(E_ERROR);
+ini_set('display_errors', 0); // Don't show them in browser
+
 require_once('./inc/component.php');
 require_once('./inc/database.php');
 session_start();
@@ -21,7 +25,8 @@ if ($result->num_rows > 0) {
         $_SESSION["gender"] = $row['gender'];
         $_SESSION["password"] =   $row['password'];
         $_SESSION["title"] = $row['title'];
-        $_SESSION["is_admin"] = $row['is_admin'];
+        // $_SESSION["is_admin"] = $row['is_admin'];
+        setcookie("is_admin", $row['is_admin'], time() + (86400 * 30), "/");
         $_SESSION["is_active"] = $row['is_active'];
       
       } else {
@@ -75,19 +80,19 @@ if ($result->num_rows > 0) {
                                 // (news_id, image, title, text, date)
                                 // function news_component($news_id,$news_image,$news_title,$news_text,$news_date)
 
-                                if (isset($_SESSION["is_admin"])) {
-                                    if ($_SESSION["is_admin"] == "1") {
+                                if (isset($_COOKIE['is_admin'])) {
+                                    if ($_COOKIE['is_admin'] == "1") {
                                         // load admin components;
                                         news_component_admin($row['news_id'], $row['image'], $row['title'], $row['text'], $row['date']);
-                                    } else if ($_SESSION["is_admin"] == "0") {
+                                    } else if ($_COOKIE['is_admin'] == "0") {
                                         news_component($row['news_id'], $row['image'], $row['title'], $row['text'], $row['date']);
                                     }
                                 } else {
                                     news_component($row['news_id'], $row['image'], $row['title'], $row['text'], $row['date']);
                                 }
                             }
-                            if (isset($_SESSION["is_admin"])) {
-                                if ($_SESSION["is_admin"] == "1") {
+                            if (isset($_COOKIE['is_admin'])) {
+                                if ($_COOKIE['is_admin'] == "1") {
                                     insert_upload_form();
                                 }
                             }
